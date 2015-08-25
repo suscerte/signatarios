@@ -3,7 +3,7 @@ from proveedores.models import Proveedor
 
 class Certificado(models.Model):
 	signatario_id = models.ForeignKey("Signatario")
-	serial = models.IntegerField()
+	serial = models.IntegerField(help_text='Serial unico del certificado')
 	estado_id = models.ForeignKey("Estado")
 	fecha_emision = models.DateField()
 	fecha_revocacion = models.DateField()
