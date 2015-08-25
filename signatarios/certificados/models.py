@@ -1,4 +1,5 @@
 from django.db import models
+from proveedores.models import Proveedor
 
 class Certificado(models.Model):
 	signatario_id = models.ForeignKey("Signatario")
@@ -7,7 +8,7 @@ class Certificado(models.Model):
 	fecha_emision = models.DateField()
 	fecha_revocacion = models.DateField()
 	tipo = models.CharField(max_length = 1024)
-	proveedor_id = models.ForeignKey("Proveedor")
+	proveedor_id = models.ForeignKey(Proveedor)
 
 	def __unicode__(self):
 		return self.serial
